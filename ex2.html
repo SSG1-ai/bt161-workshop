@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 2 — From Discovery to Inventory · BT161</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-current="ex2">
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">SAP TechEd BT161 · Exercise 2</p>
+    <h1>From Discovery to Inventory</h1>
+    <p>Open your agent in the Discovery Inbox, review the discovery details, and add it to the governed inventory.</p>
+  </div>
+</header>
+
+<nav class="exnav">
+  <a href="index.html">Home</a>
+  <a href="ex0.html">Ex 0</a>
+  <a href="ex1.html">Ex 1</a>
+  <a class="current" href="ex2.html">Ex 2</a>
+  <a href="ex3.html">Ex 3</a>
+  <a href="ex4.html">Ex 4</a>
+  <a href="ex5.html">Ex 5</a>
+  <a href="ex6.html">Ex 6</a>
+</nav>
+
+<main class="wrap">
+  <section class="section overview">
+    <h2>Overview</h2>
+    <p>Your agent is waiting in the Discovery Inbox. In this exercise you will open it, review the discovery details, and add your agent to the governed inventory.</p>
+  </section>
+
+  <section class="section background">
+    <h2>Background</h2>
+    <p>The AI Agent Discovery Inbox is where AI Agent Hub surfaces everything it has found. Agents arrive here from connected systems: standard SAP agents provisioned via SAP for Me, custom agents deployed by teams in your organization on Joule Studio, and third-party agents discovered from platforms such as Microsoft Entra ID, Google Cloud, AWS Bedrock, and ServiceNow. All agents, regardless of origin, go through the same review-and-approve process before entering the governed inventory. For a full list of supported discovery integrations, see <a href="https://help.sap.com/docs/LEANIX/72d375467c1e4dcb872dfa2998b6328d/cd40550e6bc64547a0915446e108a472.html" target="_blank" rel="noopener">AI Agent Discovery</a> in the SAP Help Portal.</p>
+    <p>Your agent was pre-loaded for this workshop to simulate a real discovery event: the EA team at GlobalFlex AG has no prior record of it, and it is your job to evaluate whether it belongs in the governed inventory.</p>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h3>Open the AI Agent Discovery Inbox</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>In SAP LeanIX, navigate to:<br><strong>Inventory → Inventory Tools <em>(top right)</em> → Discovery Inbox → AI Agent Discovery</strong></li>
+        <li>Apply the filter <strong>Status: Action Needed</strong> to focus on unreviewed agents.</li>
+        <li>Add the <strong>Build Type</strong> filter via the <strong>Add Filter</strong> button, then select <strong>Custom</strong> to narrow the list to agents built by teams in your organization.</li>
+        <li>Search for your participant number (e.g., <em>P07</em>) to find your agent.</li>
+      </ol>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise2Step1.1.png" alt="Navigating to the AI Agent Discovery Inbox">
+        <figcaption>Step 1 — Opening the AI Agent Discovery Inbox from Inventory Tools.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise2Step1.png" alt="Filtering the Discovery Inbox by Status and Build Type, then searching by participant number">
+        <figcaption>Step 1 — Filtering by <em>Status: Action Needed</em> and <em>Build Type: Custom</em>, then searching your participant number.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h3>Review the Overview</h3></div>
+    <div class="step-body">
+      <ul>
+        <li>Open your discovery item and read the <strong>Overview</strong> panel.</li>
+        <li>Review the automatically collected fields (see the table below).</li>
+        <li>Approach the agent as an EA team member seeing it for the first time.</li>
+      </ul>
+      <table>
+        <thead><tr><th>Field</th><th>What you are seeing</th></tr></thead>
+        <tbody>
+          <tr><td>Description</td><td>What the agent claims to do — sourced from the system where it was discovered.</td></tr>
+          <tr><td>Creation Timestamp</td><td>When this agent first appeared in the landscape.</td></tr>
+          <tr><td>Build Type</td><td>Custom — built and deployed by a team in your organization.</td></tr>
+          <tr><td>Discovered Fact Sheets</td><td>Automatically suggested related fact sheets — including the IT component (Joule Studio runtime) and provider (SAP), as well as any MCP servers the agent uses.</td></tr>
+          <tr><td>Additional Suggestions</td><td>Other related fact sheets the system thinks may be relevant — often includes business capabilities.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h3>Check the Details page</h3></div>
+    <div class="step-body">
+      <ul>
+        <li>Click <strong>Show all details</strong> to open the full discovery record. Here you will find:
+          <ul>
+            <li><strong>Region</strong> — where the agent is deployed.</li>
+            <li><strong>Environment</strong> — whether this agent is running in a productive environment or a development/test environment.</li>
+            <li><strong>Joule Studio link</strong> — opens the agent project in Joule Studio. Note: as an EA team member you may not have access to Joule Studio directly — this link is primarily for the developer who built the agent.</li>
+            <li><strong>Cloud Identity Services link</strong> — shows the agent's identity record. This confirms the agent has a registered identity, which means authentication, access policies, and user authorizations can be managed there.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="warn"><span class="lbl">Why environment matters</span> A <strong>productive</strong> environment means real users are already interacting with this agent — and may be accessing live SAP S/4HANA data — before any governance review has taken place.</div>
+      <div class="why"><span class="lbl">About the two system links</span> The <strong>Joule Studio link</strong> mainly serves the developer who created the agent — as an EA team member you may not have direct access to it. The <strong>Cloud Identity Services link</strong> shows the agent's identity record, confirming it has a registered identity so that authentication, access policies, and user authorizations can be managed there.</div>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise2Step2.png" alt="The full discovery details page showing Region, Environment, and system links">
+        <figcaption>Step 3 — The full discovery details page: Region, Environment, and linked systems.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h3>Add to Inventory</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Return to the discovery item and click <strong>Add to Inventory</strong>.</li>
+        <li>The agent is now part of the governed inventory — status changes to <strong>Unverified</strong>.</li>
+        <li>Open the newly created fact sheet by hovering over the fact sheet link and clicking through.</li>
+      </ol>
+      <div class="note"><span class="lbl">Note</span> Whoever deployed the agent is set automatically as the <strong>Responsible</strong> subscriber, drawn from the deployment metadata. The EA team acts as <strong>Observer</strong> — you configure that in Exercise 3.</div>
+    </div>
+  </section>
+
+  <section class="section overview">
+    <h2>Summary</h2>
+    <p>Your agent is now in the inventory with a governance record started. In Exercise 3, you will complete the parts of the governance profile the EA team can fill in independently.</p>
+  </section>
+
+  <div class="pager">
+    <a href="ex1.html">← Exercise 1</a>
+    <span class="spacer"></span>
+    <a href="ex3.html">Exercise 3: Complete the Governance Profile →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"></div>
+</footer>
+<script src="sidebar.js"></script>
+<script src="lightbox.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

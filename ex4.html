@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 4 — Collect Missing Information via Survey · BT161</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-current="ex4">
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">SAP TechEd BT161 · Exercise 4</p>
+    <h1>Collect Missing Information via Survey</h1>
+    <p>Use LeanIX's Next Generation Survey feature to gather the remaining governance data from the agent's business owner.</p>
+  </div>
+</header>
+
+<nav class="exnav">
+  <a href="index.html">Home</a>
+  <a href="ex0.html">Ex 0</a>
+  <a href="ex1.html">Ex 1</a>
+  <a href="ex2.html">Ex 2</a>
+  <a href="ex3.html">Ex 3</a>
+  <a class="current" href="ex4.html">Ex 4</a>
+  <a href="ex5.html">Ex 5</a>
+  <a href="ex6.html">Ex 6</a>
+</nav>
+
+<main class="wrap">
+  <section class="section overview">
+    <h2>Overview</h2>
+    <p>Some governance gaps can't be closed by the EA team alone — certain fields need input from the team that built or runs the agent. Chasing that information over email is slow and leaves no audit trail. LeanIX surveys let you request specific fields from the right person, with the answers flowing directly into the fact sheet. In this exercise you use the <strong>Next Generation Survey</strong> feature to build a targeted survey with AI, send it, review the response, and save it.</p>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h3>Identify the fields to survey</h3></div>
+    <div class="step-body">
+      <ul>
+        <li>Open the agent's fact sheet and confirm these fields are still empty.</li>
+        <li>Each one requires the <strong>business owner's perspective</strong>, as the table explains.</li>
+      </ul>
+      <table>
+        <thead><tr><th>Field</th><th>Why it needs the business owner</th></tr></thead>
+        <tbody>
+          <tr><td>AI Risk</td><td>How risky this agent is — requires the owner to assess impact on their domain.</td></tr>
+          <tr><td>AI Model</td><td>Which underlying LLM or foundation model is used — often not visible to the EA team.</td></tr>
+          <tr><td>Business Criticality</td><td>How critical this agent is to business operations — only the business side can assess this.</td></tr>
+          <tr><td>Functional Fit</td><td>How well the agent meets the business need it was built for.</td></tr>
+          <tr><td>AI Agent Business Value</td><td>The business value this agent delivers — requires the owner's perspective.</td></tr>
+          <tr><td>Technical Fit</td><td>How well the agent fits the technical landscape — input from the deploying team.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h3>Generate the survey</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>In the top navigation, go to <strong>More → Surveys</strong>.</li>
+        <li>Click <strong>New Survey</strong>.</li>
+        <li>Use the following prompt. Replace <code>[PXX]</code> with your participant number (e.g., P07). After submitting, the EA Assistant opens again and generates the survey — the first draft appears on the left side of the display.</li>
+      </ol>
+      <div class="prompt"><span class="lbl">Prompt to paste (replace [PXX])</span>Create a survey for an AI agent governance review for the custom agent billing-document-retrieval-[PXX]. The respondent is the agent's business owner. The survey should collect: AI Risk, the AI Model or foundation model used, Business Criticality, Functional Fit, AI Agent Business Value, and Technical Fit.</div>
+      <ol start="4">
+        <li>Review the generated survey. Check that the <strong>AI Risk</strong> question is included — if it is not, click <strong>Add Fact Sheet Field</strong> in the survey editor and search for <strong>AI Risk</strong> to add it manually. This field is required before the agent can be verified. Adjust the question wording if needed to fit the GlobalFlex AG context, then click <strong>Next</strong>.</li>
+      </ol>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise4Step2.png" alt="Generating a survey with the AI prompt in the Next Generation Survey editor">
+        <figcaption>Step 2 — Generating the survey draft from a plain-language AI prompt.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h3>Configure and send</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Under <strong>Distribution mode</strong>, select <strong>One-off Survey</strong>.</li>
+        <li>Verify that the <strong>Survey scope</strong> shows only your agent (PXX). If it includes other fact sheets, click <strong>Edit</strong> or use <strong>Change with AI</strong> to correct it so the survey is scoped to your agent only.</li>
+        <li>One respondent should be automatically selected based on the agent's responsible subscriber. Confirm the pre-selected user is correct.</li>
+        <li>In the <strong>Invitation Email</strong> section, click <strong>Include Personal Message</strong> to open the message body (the auto-generated subject line is lengthy — a personal note makes the invitation clearer). Add a short message, for example:</li>
+      </ol>
+      <div class="prompt"><span class="lbl">Example personal message</span>As part of GlobalFlex AG's AI governance process, we need your input on the agent you are responsible for. Please complete the fields below so we can complete the governance review.</div>
+      <ol start="5">
+        <li>Click <strong>Next</strong> to configure how responses are saved to fact sheets. Two options are available:
+          <ul>
+            <li><strong>Save Directly</strong> — responses are written to the fact sheet automatically on submission.</li>
+            <li><strong>Review Before Saving</strong> — responses are held for review before any fact sheet values are updated.</li>
+          </ul>
+          For this training, select <strong>Review Before Saving</strong>.
+        </li>
+        <li>Click <strong>Send Survey</strong>. The respondent receives an email with a direct link to fill in the fields.</li>
+        <li>You can review the status of your survey in the survey overview. Filter by <strong>Created By</strong> to show only surveys created by your user. Once the results are in, click <strong>Results</strong> to review the responses.</li>
+      </ol>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise4Step3.png" alt="Configuring the survey distribution, scope, respondent, and personal message">
+        <figcaption>Step 3 — Configuring distribution (One-off), scope, respondent, and the personal message before sending.</figcaption>
+      </figure>
+      <div class="why"><span class="lbl">What happens next</span> During the session the trainer, acting as the business owner, completes and submits the survey response. Watch your fact sheet — the fields will update once the response arrives.</div>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h3>Apply the survey response</h3></div>
+    <div class="step-body">
+      <p>While you wait for the trainer to submit the responses, stay in the survey overview and monitor the status of your survey. When your trainer signals that responses have been submitted:</p>
+      <ol>
+        <li>Navigate to <strong>More → Surveys</strong> and filter by <strong>Created By</strong> to find your survey. If you were already viewing the survey, <strong>reload the page</strong> so the submitted response appears.</li>
+        <li>Open your survey and click <strong>Results</strong>.</li>
+        <li>Select <strong>Save Response</strong> to write the answers to the fact sheet. The response receives a green <strong>Saved to Factsheet</strong> badge confirming the data has been applied.</li>
+        <li>Navigate to your agent's fact sheet and review the values that arrived from the survey:
+          <ul>
+            <li><strong>AI Risk</strong> — is the EU AI Act risk level appropriate for what this agent does?</li>
+            <li><strong>AI Model</strong> — note the underlying model. Does it affect your governance decision?</li>
+            <li><strong>Business Criticality</strong> — does the business side's assessment match your expectation?</li>
+            <li><strong>Functional Fit</strong> and <strong>Technical Fit</strong> — do these align with what you observed during discovery?</li>
+          </ul>
+        </li>
+        <li>If any value looks incorrect, discuss it with your workshop partner before proceeding. If you have questions, raise your hand and ask your trainer.</li>
+      </ol>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise4Step4.png" alt="Opening survey Results and saving the response to the fact sheet">
+        <figcaption>Step 4 — Opening Results and saving the submitted response to the fact sheet.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 5 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">5</span><h3>Review the change log</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Open the <strong>Last update</strong> tab on the agent's fact sheet.</li>
+        <li>Confirm the survey-driven field updates appear as individual log entries — an auditable trail of what changed, when, who provided it, and how.</li>
+      </ol>
+      <div class="why"><span class="lbl">Why this matters</span> The change log provides an auditable trail — it shows not only the current field contents but also when the information arrived, who supplied it, and how it was gathered (survey vs. direct edit). This is what AI governance accountability looks like in practice.</div>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise4Step5.png" alt="The Last update change log showing each survey-driven field update as an entry">
+        <figcaption>Step 5 — The change log, with each survey-driven update recorded as its own entry.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section overview">
+    <h2>Summary</h2>
+    <p>The fact sheet now has all required fields populated — partly by you (description, ADR link, observer subscription) and partly by the business owner via survey. This combination of structured self-service and targeted data collection is how AI governance scales without becoming a bottleneck.</p>
+    <p>Move on to Exercise 5 when your trainer confirms that survey responses have been submitted for all groups.</p>
+  </section>
+
+  <div class="pager">
+    <a href="ex3.html">← Exercise 3</a>
+    <span class="spacer"></span>
+    <a href="ex5.html">Exercise 5: Verify the Agent →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"></div>
+</footer>
+<script src="sidebar.js"></script>
+<script src="lightbox.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

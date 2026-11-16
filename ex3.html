@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 3 — Complete the Governance Profile · BT161</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-current="ex3">
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">SAP TechEd BT161 · Exercise 3</p>
+    <h1>Complete the Governance Profile</h1>
+    <p>Fill in the governance record for your agent: assign subscribers, validate the description, and link the Architecture Decision.</p>
+  </div>
+</header>
+
+<nav class="exnav">
+  <a href="index.html">Home</a>
+  <a href="ex0.html">Ex 0</a>
+  <a href="ex1.html">Ex 1</a>
+  <a href="ex2.html">Ex 2</a>
+  <a class="current" href="ex3.html">Ex 3</a>
+  <a href="ex4.html">Ex 4</a>
+  <a href="ex5.html">Ex 5</a>
+  <a href="ex6.html">Ex 6</a>
+</nav>
+
+<main class="wrap">
+  <section class="section overview">
+    <h2>Overview</h2>
+    <p>The agent exists in the inventory but its governance record is incomplete. In this exercise you fill in the fields the EA team can handle independently: assigning yourself as Observer and linking the agent to the Architecture Decision Record from Exercise 1. The owner-dependent fields (AI Risk, AI Model, Business Criticality, Functional Fit, AI Agent Business Value, Technical Fit) are deferred to a survey in Exercise 4.</p>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h3>Review the fact sheet for gaps</h3></div>
+    <div class="step-body">
+      <ul>
+        <li>Open the agent's fact sheet in SAP LeanIX.</li>
+        <li>Work through each field below and check its current state.</li>
+      </ul>
+      <table>
+        <thead><tr><th>Field</th><th>What to check</th></tr></thead>
+        <tbody>
+          <tr><td>Description</td><td>Should be pre-filled from the discovery data. Confirm it accurately describes what this agent does.</td></tr>
+          <tr><td>Responsible subscriber</td><td>Auto-assigned to the person who deployed this agent in Joule Studio. Check who is listed.</td></tr>
+          <tr><td>Build Type</td><td>Should be pre-filled as Custom from the deployment metadata. Confirm it is set.</td></tr>
+          <tr><td>Architecture Decision</td><td>Not yet linked. You will link it in Step 4.</td></tr>
+          <tr><td>AI Risk</td><td>Empty — requires the agent's business owner. Goes to survey in Exercise 4.</td></tr>
+          <tr><td>AI Model</td><td>Empty — requires the agent's business owner. Goes to survey in Exercise 4.</td></tr>
+          <tr><td>Business Criticality</td><td>Empty — requires the agent's business owner. Goes to survey in Exercise 4.</td></tr>
+          <tr><td>Functional Fit</td><td>Empty — requires the agent's business owner. Goes to survey in Exercise 4.</td></tr>
+          <tr><td>AI Agent Business Value</td><td>Empty — requires the agent's business owner. Goes to survey in Exercise 4.</td></tr>
+          <tr><td>Technical Fit</td><td>Empty — requires the agent's business owner. Goes to survey in Exercise 4.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h3>Assign subscribers</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Navigate to the <strong>Subscriptions</strong> section.</li>
+        <li>Add <strong>yourself</strong> as an <strong>Observer</strong> subscriber.</li>
+        <li>Assign <strong>Joanne Rhode</strong> (<code>joanne.rhode@sap.com</code>) as the <strong>Responsible</strong> subscriber — the business owner for this scenario.</li>
+      </ol>
+      <div class="why"><span class="lbl">What subscriptions do</span> Subscriptions establish accountability and drive update notifications. The <strong>Responsible</strong> role is the business owner or deploying team — accountable for the agent and the recipient of governance surveys. The <strong>Observer</strong> is the EA team member handling governance oversight — notified of changes without taking on operational accountability.</div>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h3>Validate the description</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Read the description carefully.</li>
+        <li>Confirm it reflects the agent's actual function at GlobalFlex AG — not a generic template.</li>
+        <li>If it is thin or inaccurate, use LeanIX's built-in <strong>AI-generate</strong> option (the <strong>sparkle icon</strong>) in edit mode to improve it.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h3>Link the Architecture Decision</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Click the <strong>EA Assistant</strong> icon (stars icon) in the header toolbar (or open the ADR directly from <strong>Architecture Decisions</strong>).</li>
+        <li>Find the ADR you created in Exercise 1 — search for your participant number.</li>
+        <li>Open the ADR and navigate to the <strong>Impacted Fact Sheets</strong> section.</li>
+        <li>Add your agent's fact sheet to the ADR.</li>
+      </ol>
+      <div class="why"><span class="lbl">Why from the ADR side?</span> Architecture decisions are linked by adding fact sheets to the ADR — not by editing individual fact sheets. This keeps the decision as the single source of truth: all agents subject to a policy are listed in one place.</div>
+      <ol start="5">
+        <li>Return to your agent's fact sheet and confirm the ADR now appears in the <strong>Decisions</strong> panel in the right sidebar.</li>
+      </ol>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise3Step1.png" alt="Agent fact sheet showing the governance profile with the linked Architecture Decision">
+        <figcaption>Step 4 — The fact sheet governance profile with the linked Architecture Decision shown in the Decisions panel.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section overview">
+    <h2>Summary</h2>
+    <p>The EA team's portion of the governance record is now complete: you are assigned as Observer, the description is confirmed, and the ADR has been linked. The remaining fields — AI Risk, AI Model, Business Criticality, Functional Fit, AI Agent Business Value, and Technical Fit — require input from the agent's business owner. In Exercise 4, you will send them a survey to collect that information.</p>
+  </section>
+
+  <div class="pager">
+    <a href="ex2.html">← Exercise 2</a>
+    <span class="spacer"></span>
+    <a href="ex4.html">Exercise 4: Collect Missing Information via Survey →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"></div>
+</footer>
+<script src="sidebar.js"></script>
+<script src="lightbox.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 6 — Decommission a Legacy Agent · BT161</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-current="ex6">
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">SAP TechEd BT161 · Exercise 6</p>
+    <h1>Decommission a Legacy Agent</h1>
+    <p>Close out a legacy billing agent: link the ADR and successor, set the lifecycle to End of Life, and reject its verification.</p>
+  </div>
+</header>
+
+<nav class="exnav">
+  <a href="index.html">Home</a>
+  <a href="ex0.html">Ex 0</a>
+  <a href="ex1.html">Ex 1</a>
+  <a href="ex2.html">Ex 2</a>
+  <a href="ex3.html">Ex 3</a>
+  <a href="ex4.html">Ex 4</a>
+  <a href="ex5.html">Ex 5</a>
+  <a class="current" href="ex6.html">Ex 6</a>
+</nav>
+
+<main class="wrap">
+  <section class="section overview">
+    <h2>Overview</h2>
+    <p>Governance includes formally closing out agents that are no longer needed — not just approving new ones. In this exercise you decommission a legacy billing agent that was replaced by the agent you verified earlier, documenting its lineage and removing its production approval.</p>
+  </section>
+
+  <section class="section background">
+    <h2>Background</h2>
+    <p>The custom Joule Studio agent you governed in Exercises 2–5 was introduced to replace an older agent: the <strong>AWS Billing Document Retrieval Agent [PXX]</strong>, a legacy billing agent built on AWS Bedrock by the Finance Controlling team in 2023 to automate billing document lookups and retrievals for GlobalFlex AG's Quote-to-Cash process (searching for billing documents, checking billing dates, retrieving posting information, and updating billing references via custom REST API endpoints into SAP S/4HANA). It was a valid solution at the time — but it runs on AWS infrastructure outside SAP's security perimeter, and it was built before the Joule Studio runtime policy was established.</p>
+    <p>The AWS Billing Document Retrieval Agent [PXX] is already in <strong>Phase Out</strong> lifecycle — but the governance record has not been closed out. Without formal decommissioning, it could still be discovered, reactivated, or mistaken for an active agent.</p>
+    <p>Your job is to complete the record: link the governing architecture decision, link the successor, update the lifecycle to End of Life, and remove the verification.</p>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h3>Find the legacy agent</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Click the <strong>EA Assistant</strong> icon (stars icon) in the header toolbar, next to the <strong>Full View</strong> switcher.</li>
+        <li>Use the following prompt:</li>
+      </ol>
+      <div class="prompt"><span class="lbl">Prompt to paste (replace [PXX])</span>Find the AWS Billing Document Retrieval Agent [PXX].</div>
+      <ol start="3">
+        <li>Open the fact sheet returned by the assistant.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h3>Link the Architecture Decision</h3></div>
+    <div class="step-body">
+      <p>The ADR you created in Exercise 1 — "Finance Agents on SAP S/4HANA Must Use Joule Studio Runtime" — is exactly why this agent is being retired. The AWS Billing Document Retrieval Agent [PXX] runs on AWS Bedrock rather than the Joule Studio runtime, so it does not comply with the policy. Linking the ADR here closes the governance loop: the decision that triggered the decommissioning is traceable from the agent's fact sheet.</p>
+      <p>You can do this in two ways — choose one:</p>
+      <p><strong>Option A — via EA Assistant</strong> (continuing the session from Step 1):</p>
+      <div class="prompt"><span class="lbl">Prompt to paste (replace [PXX])</span>Link my architecture decision [PXX] to the AWS Billing Document Retrieval Agent [PXX].</div>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise5Step2.1.png" alt="Option A — linking the architecture decision via the EA Assistant">
+        <figcaption>Step 2, Option A — Linking the ADR to the legacy agent through the EA Assistant.</figcaption>
+      </figure>
+      <p><strong>Option B — from the ADR fact sheet:</strong></p>
+      <ol>
+        <li>Navigate to your ADR ("Finance Agents on SAP S/4HANA Must Use Joule Studio Runtime — [PXX]").</li>
+        <li>In the <strong>Affected Fact Sheets</strong> section, add the <strong>AWS Billing Document Retrieval Agent [PXX]</strong>.</li>
+      </ol>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Step5Exercise2.2.png" alt="Option B — adding the legacy agent from the ADR's Affected Fact Sheets section">
+        <figcaption>Step 2, Option B — Adding the legacy agent from the ADR's Affected Fact Sheets section.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h3>Set the successor</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>In the fact sheet <strong>Information</strong> section, under <strong>Relationship Explorer</strong>, find the <strong>Successors</strong> subsection.</li>
+        <li>Add your verified custom agent as the successor (search by <code>[PXX]</code>).</li>
+        <li>Set an <strong>Active From</strong> date matching the <strong>Active</strong> date you used in Exercise 5.</li>
+      </ol>
+      <div class="note"><span class="lbl">Note</span> This creates a formal lineage record — the successor's fact sheet will show the legacy agent as its <strong>Predecessor</strong>.</div>
+      <div class="why"><span class="lbl">Why this matters</span> Adding the successor builds a formal lineage record, so future viewers can see exactly what replaced the legacy agent and when. The replacement's fact sheet will then list this legacy agent as its Predecessor.</div>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise6Step3.png" alt="Adding the verified custom agent as the successor in the Relationship Explorer">
+        <figcaption>Step 3 — Setting the verified custom agent as the successor in the Relationship Explorer.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h3>Update the lifecycle to End of Life</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Open the <strong>Lifecycle</strong> field in the fact sheet header.</li>
+        <li>Set the <strong>End of Life</strong> phase with today's actual date — this is date-driven, not just a label.</li>
+        <li>This mirrors how you opened the <strong>Active</strong> phase in Exercise 5, and drives lifecycle/roadmap reports.</li>
+      </ol>
+      <div class="why"><span class="lbl">Why set the actual date</span> Because the lifecycle field is date-driven, set the real End of Life date rather than just the phase label. This captures <em>when</em> the agent retired, which feeds the lifecycle/roadmap reports and the Change Log timestamp. It parallels the Active phase you opened in Exercise 5 — you are now closing the lifecycle you began.</div>
+    </div>
+  </section>
+
+  <!-- STEP 5 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">5</span><h3>Reject the verification</h3></div>
+    <div class="step-body">
+      <p>An End-of-Life agent should be explicitly <strong>rejected</strong> — not just unverified — so the record shows a deliberate decision.</p>
+      <ol>
+        <li>Locate the <strong>Verification Badge</strong> in the fact sheet header.</li>
+        <li>Click the badge and select <strong>Mark as Rejected</strong>.</li>
+        <li>The badge updates to the rejected state.</li>
+      </ol>
+      <div class="why"><span class="lbl">Reject, don't just unverify</span> An End-of-Life agent shouldn't keep a production-approved badge. Explicitly rejecting — rather than unverifying — records a deliberate governance decision, not just a neutral reset.</div>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise6Step5.png" alt="Selecting Mark as Rejected on the Verification Badge">
+        <figcaption>Step 5 — Rejecting the verification via the Verification Badge.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section overview">
+    <h2>Summary</h2>
+    <p>You have completed the full governance lifecycle — from discovering a new agent all the way to formally decommissioning a legacy one. The ADR links the policy decision that drove the retirement; the successor link connects the two agents as a documented lineage; and the decommissioning record is preserved in the Last Updated tab. The legacy agent remains in the inventory as a historical record; it is not deleted. (In a real landscape you would typically <strong>archive</strong> the fact sheet after a retention period, which removes it from active views while keeping its history.)</p>
+    <div class="why"><span class="lbl">From discovery to decommissioning</span> This is what the session title means by "from discovery to decommissioning" — governance is a continuous cycle, not a one-time event.</div>
+  </section>
+
+  <section class="section background">
+    <h2>Going further — Architecture and Road Map Planning</h2>
+    <p>For portfolio-scale decommissioning, SAP LeanIX offers <strong>Architecture and Road Map Planning</strong> (formerly the Business Transformation Module) to model a <strong>Decommission</strong> transformation tied to an initiative, preview its impact, and visualize sunsetting on a roadmap — an advanced capability beyond this beginner workshop.</p>
+    <ul>
+      <li><a href="https://help.sap.com/docs/LEANIX/72d375467c1e4dcb872dfa2998b6328d/716633e9efed4de4a269ae0dce7df544.html?locale=en-US" target="_blank" rel="noopener">Target Architecture Planning</a></li>
+      <li><a href="https://help.sap.com/docs/LEANIX/72d375467c1e4dcb872dfa2998b6328d/275d58c37a441014962be776bd832558.html?locale=en-US" target="_blank" rel="noopener">Create AI-Related Transformations</a></li>
+      <li><a href="https://help.sap.com/docs/LEANIX/72d375467c1e4dcb872dfa2998b6328d/2758bc147a441014b210c1a6641458da.html?locale=en-US" target="_blank" rel="noopener">SAP LeanIX Architecture and Road Map Planning</a></li>
+    </ul>
+  </section>
+
+  <div class="pager">
+    <a href="ex5.html">← Exercise 5</a>
+    <span class="spacer"></span>
+    <a href="index.html">Back to Home →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"></div>
+</footer>
+<script src="sidebar.js"></script>
+<script src="lightbox.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

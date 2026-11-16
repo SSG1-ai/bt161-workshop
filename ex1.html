@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 1 — The AI Agent Hub Dashboard · BT161</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-current="ex1">
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">SAP TechEd BT161 · Exercise 1</p>
+    <h1>The AI Agent Hub Dashboard</h1>
+    <p>Create an Architecture Decision Record to formalize a governance policy, explore the dashboard and inventory, and link the decision to a verified agent.</p>
+  </div>
+</header>
+
+<nav class="exnav">
+  <a href="index.html">Home</a>
+  <a href="ex0.html">Ex 0</a>
+  <a class="current" href="ex1.html">Ex 1</a>
+  <a href="ex2.html">Ex 2</a>
+  <a href="ex3.html">Ex 3</a>
+  <a href="ex4.html">Ex 4</a>
+  <a href="ex5.html">Ex 5</a>
+  <a href="ex6.html">Ex 6</a>
+</nav>
+
+<main class="wrap">
+  <section class="section overview">
+    <h2>Overview</h2>
+    <p>Before reviewing any individual agent, your AI Governance Center of Excellence has just come out of a committee meeting with a policy decision that needs to be documented. In this exercise you will create an <strong>Architecture Decision Record (ADR)</strong> to formalize that policy, then orient yourself in the dashboard and inventory to understand the current state of AI at GlobalFlex AG.</p>
+  </section>
+
+  <section class="section background">
+    <h2>Background</h2>
+    <p>GlobalFlex AG's AI governance committee has concluded that <strong>all finance agents interacting with SAP S/4HANA data must run on the Joule Studio runtime</strong> and must undergo formal governance review before going live. Your job is to document this as an official Architecture Decision Record so that every agent review from this point forward can be checked against it.</p>
+    <p>You will use the <strong>EA Assistant</strong> — the AI-powered assistant in SAP LeanIX — to draft the ADR from a plain-language description.</p>
+    <div class="why"><span class="lbl">What is an Architecture Decision Record?</span> An ADR is a short document that captures an important architectural decision: what was decided, why, and what the implications are. Enterprise architects create ADRs when a policy or technical constraint must be made explicit and traceable — so that future reviews can verify compliance. The ADR you create here will be referenced again when you link it to your agent in Exercise 3, turning a committee decision into a verifiable governance control.</div>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h3>Create an Architecture Decision</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Click the <strong>EA Assistant (stars icon)</strong> in the header toolbar, beside the Full View switcher.</li>
+        <li>Enter the prompt below, replacing <code>[PXX]</code> with your participant number.</li>
+        <li>Review the generated ADR with its <strong>Context</strong>, <strong>Decision</strong>, and <strong>Consequences</strong> sections.</li>
+      </ol>
+      <div class="prompt"><span class="lbl">Prompt to paste (replace [PXX])</span>Create an architecture decision titled 'Finance Agents on SAP S/4HANA Must Use Joule Studio Runtime — [PXX]' documenting the following policy: All AI agents that interact with SAP S/4HANA financial data at GlobalFlex AG must be deployed on the Joule Studio runtime. This decision applies to standard and custom-built agents. Agents that do not comply must be migrated or decommissioned. The rationale is auditability, data residency compliance, and alignment with the SAP AI governance framework.</div>
+      <div class="note"><span class="lbl">Note</span> The ADR is saved automatically and its status is set to <strong>Accepted</strong>.</div>
+      <div class="why"><span class="lbl">Why your participant number matters</span> Because everyone in this session shares one workspace, including your participant number in the ADR title makes it easy to find your own ADR later when you link it to your agent in Exercise 3.</div>
+      <div class="why"><span class="lbl">Why this comes first</span> Architecture decisions document policy at the organization level — before you look at any individual agent. In Exercise 3, you will link your agent to this ADR to show it is subject to this policy.</div>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/EAAssistantHeaderIcon.png" alt="The EA Assistant stars icon in the header toolbar">
+        <figcaption>Step 1 — Open the EA Assistant (stars) icon to create the Architecture Decision.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h3>Review the Dashboard</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Navigate to the <strong>AI Agent Hub Dashboard</strong>.</li>
+        <li>Review the overview, which shows:
+          <ul>
+            <li>Total <strong>agents</strong>, <strong>MCP servers</strong>, and <strong>LLMs</strong>.</li>
+            <li>The AI pipeline — <strong>Discovery → Inventory → Verified</strong> status counts.</li>
+            <li>Agents by <strong>verification status</strong>.</li>
+            <li><strong>Connected systems</strong> (Joule Studio, SAP Cloud ALM, Signavio, and others).</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="why"><span class="lbl">What you are seeing</span> GlobalFlex AG has already connected its SAP system to the AI Agent Hub. The dashboard gives you a real-time governance posture — how many agents exist, how many are verified, and the current level of AI activity across your landscape.</div>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h3>Drill into a pre-verified agent</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Navigate to the <strong>Inventory</strong> view.</li>
+        <li>Filter by <strong>Application</strong> type + <strong>AI Agent</strong> subtype.</li>
+        <li>Open the <strong>Billing Adjustment Agent</strong> — a pre-loaded, pre-verified standard SAP agent.</li>
+        <li>Explore the fact sheet tabs:
+          <ul>
+            <li><strong>Relations Explorer</strong> — how the agent connects to other fact sheets.</li>
+            <li><strong>Analytics</strong> — sessions, first/last active.</li>
+            <li><strong>Verification status</strong>.</li>
+            <li><strong>Subscriptions</strong> — Responsible and Observer.</li>
+            <li><strong>Last Updated</strong> — the change log, i.e. the audit trail of every governance action.</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="why"><span class="lbl">This is your audit trail</span> Every field change, subscription update, and verification decision is logged in the <strong>Last Updated</strong> tab. By the end of the day's exercises this becomes a complete governance record for the agent.</div>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h3>Link the ADR to the standard agent</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Return to the <strong>EA Assistant</strong> icon in the header toolbar and use the same active session.</li>
+        <li>Enter the prompt below.</li>
+        <li>Confirm the agent now appears in the <strong>Affected Fact Sheets</strong> section of the ADR — this shows the policy applies retroactively.</li>
+      </ol>
+      <div class="prompt"><span class="lbl">Prompt to paste</span>Please link this architecture decision to the Billing Adjustment Agent fact sheet.</div>
+      <div class="why"><span class="lbl">Why this matters</span> Connecting an existing <em>standard</em> agent to the ADR shows that the policy applies retroactively — it covers the entire governed landscape, not only new custom agents.</div>
+    </div>
+  </section>
+
+  <section class="section overview">
+    <h2>Summary</h2>
+    <p>You have documented a governance policy as an ADR, seen what a fully governed agent looks like, and linked the standard agent to the policy. In Exercise 2, you will find the custom agent assigned to you in the Discovery Inbox and begin the review process.</p>
+  </section>
+
+  <div class="pager">
+    <a href="ex0.html">← Exercise 0</a>
+    <span class="spacer"></span>
+    <a href="ex2.html">Exercise 2: From Discovery to Inventory →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"></div>
+</footer>
+<script src="sidebar.js"></script>
+<script src="lightbox.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

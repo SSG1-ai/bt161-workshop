@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 5 — Verify the Agent · BT161</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-current="ex5">
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">SAP TechEd BT161 · Exercise 5</p>
+    <h1>Verify the Agent</h1>
+    <p>Complete the governance checklist, set the lifecycle to Active, mark the agent as Verified, and set the Quality Seal.</p>
+  </div>
+</header>
+
+<nav class="exnav">
+  <a href="index.html">Home</a>
+  <a href="ex0.html">Ex 0</a>
+  <a href="ex1.html">Ex 1</a>
+  <a href="ex2.html">Ex 2</a>
+  <a href="ex3.html">Ex 3</a>
+  <a href="ex4.html">Ex 4</a>
+  <a class="current" href="ex5.html">Ex 5</a>
+  <a href="ex6.html">Ex 6</a>
+</nav>
+
+<main class="wrap">
+  <section class="section overview">
+    <h2>Overview</h2>
+    <p>Verification is a governance decision point. When you mark an agent as verified in SAP LeanIX, you are formally approving it for production use in your organization.</p>
+    <div class="warn"><span class="lbl">Before you start</span> Confirm the Exercise 4 survey responses are submitted. The fact sheet must show values for <strong>AI Risk, AI Model, Business Criticality, Functional Fit, AI Agent Business Value,</strong> and <strong>Technical Fit</strong> before you proceed.</div>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h3>Confirm the governance checklist</h3></div>
+    <div class="step-body">
+      <p>Open your agent's fact sheet and verify that every item below is complete:</p>
+      <ul class="checklist">
+        <li><strong>Description</strong> — confirmed in Exercise 3</li>
+        <li><strong>Responsible</strong> — auto-assigned from deployment (Exercise 2); you are Observer (Exercise 3)</li>
+        <li><strong>Architecture Decision</strong> — linked in Exercise 1 and Exercise 3</li>
+        <li><strong>AI Risk</strong> — received via survey (Exercise 4)</li>
+        <li><strong>AI Model</strong> — received via survey (Exercise 4)</li>
+        <li><strong>Business Criticality</strong> — received via survey (Exercise 4)</li>
+        <li><strong>Functional Fit</strong> — received via survey (Exercise 4)</li>
+        <li><strong>AI Agent Business Value</strong> — received via survey (Exercise 4)</li>
+        <li><strong>Technical Fit</strong> — received via survey (Exercise 4)</li>
+        <li><strong>Lifecycle</strong> — set to <strong>Active</strong> in Step 2 below</li>
+      </ul>
+      <p>If any item is still missing, address it before clicking Verify.</p>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h3>Set the lifecycle to Active</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Open the fact sheet and find the <strong>Lifecycle</strong> field in the header "About" section (it shows empty if unset).</li>
+        <li>Click the field to open the lifecycle editor, which shows the five phases, each with a date field.</li>
+        <li>In the <strong>Active</strong> row, set the date to <strong>today</strong>; leave the other phases empty.</li>
+        <li>Click <strong>Save</strong> — the header then shows the current phase as <strong>Active</strong>.</li>
+      </ol>
+      <table>
+        <thead><tr><th>Phase</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Plan</td><td>Being considered or designed — not built yet.</td></tr>
+          <tr><td>Phase In</td><td>Being built, acquired, or rolled out.</td></tr>
+          <tr><td>Active</td><td>Productive and in active use.</td></tr>
+          <tr><td>Phase Out</td><td>Being retired or replaced, but still partly in use.</td></tr>
+          <tr><td>End of Life</td><td>No longer in use (you will set this in Exercise 6).</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><span class="lbl">Date-driven</span> The lifecycle has five phases — <strong>Plan, Phase In, Active, Phase Out, End of Life</strong>. The system derives the current phase by comparing the dates you set to today, so the current phase (Active) is derived from the date you just set.</div>
+      <div class="why"><span class="lbl">Why this matters</span> Marking the agent Active shows it is productive and approved — exactly what you are about to confirm with verification. It also ensures the agent displays correctly on lifecycle and roadmap reports, and it opens the lifecycle you will formally close in Exercise 6.</div>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h3>Mark as Verified</h3></div>
+    <div class="step-body">
+      <ol>
+        <li>Locate the <strong>Verification Badge</strong> at the top of the fact sheet header.</li>
+        <li>Click the badge and select <strong>Mark as Verified</strong>.</li>
+        <li>A confirmation dialog appears showing governance details (Autonomy Level, Build Type, AI Risk, and Responsibles).</li>
+        <li>Click <strong>Verify AI Agent</strong> to confirm — the badge updates to <strong>Agent Verified</strong>.</li>
+      </ol>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise5Step3.png" alt="The verification confirmation dialog showing Autonomy Level, Build Type, AI Risk, and Responsibles">
+        <figcaption>Step 3 — The verification confirmation dialog before clicking <em>Verify AI Agent</em>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h3>Set the Quality Seal</h3></div>
+    <div class="step-body">
+      <ul>
+        <li>The <strong>Verification Badge</strong> is AI-specific — it approves productive use of AI agents, MCP servers, and LLMs.</li>
+        <li>The <strong>Quality Seal</strong> (Approval State) applies to all fact sheets and signals that data-quality standards are met.</li>
+      </ul>
+      <ol>
+        <li>Locate the <strong>Quality Seal</strong> in the header — a status indicator showing <strong>Draft</strong> or <strong>Check Needed</strong>.</li>
+        <li>Click it and set the state to <strong>Approved</strong>.</li>
+      </ol>
+      <div class="why"><span class="lbl">Two distinct signals</span> The <strong>Verification Badge</strong> is specific to AI agents, MCP servers, and LLMs — it means the agent has been reviewed and approved to run productively (the AI governance signal). The <strong>Quality Seal</strong> (Approval State) applies to all fact sheets — it signals the data has been reviewed and meets your organization's data-quality standard. Both are meaningful and both should be set.</div>
+      <figure class="shot">
+        <img loading="lazy" src="https://raw.githubusercontent.com/SAP-samples/teched2026-BT161/main/images/Exercise5Step4.png" alt="The fact sheet header with the Quality Seal dropdown open showing Approve Fact Sheet">
+        <figcaption>Step 4 — Setting the Quality Seal (Approval State) to <em>Approved</em>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section overview">
+    <h2>Summary</h2>
+    <p>You have completed the full AI governance lifecycle for a newly discovered agent: discovery, inventory, governance profile, data collection from the business owner, and formal verification.</p>
+    <p>Your agent is now verified. This means that from a governance perspective, you have confirmed this agent is approved to be used within your organization — and end users can interact with it for the tasks it was designed for. The full governance record — who reviewed it, what policies apply, what the business owner confirmed — is captured in SAP LeanIX as an auditable history.</p>
+    <div class="note"><span class="lbl">Good to know</span> Administrators can configure a custom governance checklist under <strong>Administration → AI Governance</strong> (viewable but not editable in the shared workshop workspace).</div>
+  </section>
+
+  <div class="pager">
+    <a href="ex4.html">← Exercise 4</a>
+    <span class="spacer"></span>
+    <a href="ex6.html">Exercise 6: Decommission a Legacy Agent →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"></div>
+</footer>
+<script src="sidebar.js"></script>
+<script src="lightbox.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

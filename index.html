@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAP TechEd BT161 — AI Agent Hub Workshop</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-current="home">
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">SAP TechEd 2026 · BT161</p>
+    <h1>Govern AI Agents with SAP LeanIX AI Agent Hub</h1>
+    <p>A hands-on workshop that walks through the full AI governance lifecycle — from discovering a new agent to decommissioning a legacy one — using SAP LeanIX. Work through the exercises in order.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section overview">
+    <h2>About this workshop</h2>
+    <div class="note"><span class="lbl">Your participant number</span> Throughout the workshop you use <code>PXX</code> — the two-digit suffix of your <code>BT161-0NN</code> username (e.g. BT161-007 → <strong>P07</strong>). Use it to find your personal agent in the shared workspace.</div>
+  </section>
+
+  <!-- ===== Intro deck: BT161_AI_Agent_Hub_Intro.pdf ===== -->
+  <section class="section">
+    <h2>Introduction slides</h2>
+    <div class="pdf-embed">
+      <iframe src="https://docs.google.com/gview?embedded=true&url=https://github.com/SAP-samples/teched2026-BT161/raw/main/BT161_AI_Agent_Hub_Intro%20.pdf" title="BT161 AI Agent Hub intro slides"></iframe>
+    </div>
+    <p class="pdf-fallback">If the slides don't load above, <a href="https://github.com/SAP-samples/teched2026-BT161/raw/main/BT161_AI_Agent_Hub_Intro%20.pdf" target="_blank" rel="noopener">open the intro PDF in a new tab ↗</a>.</p>
+  </section>
+
+  <section class="section overview">
+    <h2>SAP AI Agent Hub — AI governance workshop</h2>
+    <p><strong>From discovery to decommissioning.</strong> SAP TechEd 2026.</p>
+  </section>
+
+  <section class="section">
+    <h2>Architecture context</h2>
+    <p>A framework that covers both <strong>design</strong> and <strong>runtime</strong> — organised around a continuous loop: <em>Define → Verify → Enforce → Monitor → Optimize</em>.</p>
+    <div class="two-col">
+      <div>
+        <h3>AI discovery and inventory</h3>
+        <ul>
+          <li>Applications</li>
+          <li>Agents</li>
+          <li>MCP servers</li>
+          <li>Data products</li>
+          <li>AI models</li>
+          <li>Skills</li>
+        </ul>
+      </div>
+      <div>
+        <h3>AI oversight and governance</h3>
+        <ul>
+          <li>Verification workflow and signal</li>
+          <li>Regulatory risk assessment</li>
+          <li>AI potential and planning</li>
+          <li>Business outcome and value tracking</li>
+          <li>Usage and behavior analytics</li>
+          <li>Business context</li>
+        </ul>
+      </div>
+      <div>
+        <h3>AI runtime, monitoring, and enforcement</h3>
+        <ul>
+          <li>Multi-agent orchestration</li>
+          <li>Agent observability</li>
+          <li>Guardrails and policy enforcement</li>
+          <li>Interoperability</li>
+          <li>Identity and access control</li>
+          <li>Agent execution and audit log</li>
+          <li>Deployment and runtime controls</li>
+          <li>…and more</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section background">
+    <h2>Shadow AI is already in your organisation</h2>
+    <ul>
+      <li>Business teams deploy AI agents across the landscape, often without central visibility.</li>
+      <li>No shared inventory means ownership, purpose and lifecycle status remain unclear.</li>
+      <li>Without records, risk assessment and audit evidence are difficult to establish.</li>
+      <li>The enterprise architecture team must create a governed path within <strong>90 days</strong>.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Your role today: meet GlobalFlex AG</h2>
+    <ul>
+      <li><strong>Company:</strong> 12 countries, with 8,000 employees. SAP S/4HANA as the backbone.</li>
+      <li><strong>Landscape:</strong> SAP-native services, Microsoft 365 and a growing AI agent footprint.</li>
+      <li><strong>Your role:</strong> you are part of the newly established AI Governance Center of Excellence.</li>
+      <li><strong>Your task:</strong> investigate a newly discovered agent, complete its governance record and decide its lifecycle outcome.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>What you will learn</h2>
+    <div class="two-col">
+      <div><h3>Document policy</h3><p>Create an Architecture Decision Record for the governance policy.</p></div>
+      <div><h3>Triage discovery</h3><p>Review newly discovered agents and move the right item into inventory.</p></div>
+      <div><h3>Build the profile</h3><p>Add ownership, risk classification and the relevant ADR linkage.</p></div>
+      <div><h3>Collect evidence</h3><p>Send a survey to the business owner to fill information gaps.</p></div>
+      <div><h3>Verify readiness</h3><p>Verify the agent when the complete governance record is in place.</p></div>
+      <div><h3>Close the lifecycle</h3><p>Decommission a legacy agent and complete the lifecycle.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Build and deploy custom agents in Joule Studio</h2>
+    <p>For additional information on how to create data points, please visit the SAP brand site.</p>
+  </section>
+
+  <h2 class="grid-head">The exercises</h2>
+  <div class="grid">
+    <a class="ex-card" href="ex0.html"><span class="tag">EXERCISE 0</span><h3>Getting Started</h3><p>Log in to SAP LeanIX, open the AI Agent Hub, and orient yourself in the interface.</p></a>
+    <a class="ex-card" href="ex1.html"><span class="tag">EXERCISE 1</span><h3>The AI Agent Hub Dashboard</h3><p>Create an Architecture Decision Record, review the dashboard, and link the ADR to a verified agent.</p></a>
+    <a class="ex-card" href="ex2.html"><span class="tag">EXERCISE 2</span><h3>From Discovery to Inventory</h3><p>Open your agent in the Discovery Inbox, review the discovery details, and add it to the inventory.</p></a>
+    <a class="ex-card" href="ex3.html"><span class="tag">EXERCISE 3</span><h3>Complete the Governance Profile</h3><p>Assign subscribers, validate the description, and link the Architecture Decision.</p></a>
+    <a class="ex-card" href="ex4.html"><span class="tag">EXERCISE 4</span><h3>Collect Missing Information via Survey</h3><p>Generate an AI survey, send it to the business owner, and apply the response to the fact sheet.</p></a>
+    <a class="ex-card" href="ex5.html"><span class="tag">EXERCISE 5</span><h3>Verify the Agent</h3><p>Complete the checklist, set the lifecycle to Active, mark as Verified, and set the Quality Seal.</p></a>
+    <a class="ex-card" href="ex6.html"><span class="tag">EXERCISE 6</span><h3>Decommission a Legacy Agent</h3><p>Link the ADR and successor, set End of Life, and reject the verification of a legacy agent.</p></a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"></div>
+</footer>
+<script src="sidebar.js"></script>
+<script src="lightbox.js"></script>
+</body>
+</html>
