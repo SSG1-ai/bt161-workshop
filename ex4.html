@@ -44,7 +44,6 @@
         <thead><tr><th>Field</th><th>Why it needs the business owner</th></tr></thead>
         <tbody>
           <tr><td>AI Risk</td><td>How risky this agent is — requires the owner to assess impact on their domain.</td></tr>
-          <tr><td>AI Model</td><td>Which underlying LLM or foundation model is used — often not visible to the EA team.</td></tr>
           <tr><td>Business Criticality</td><td>How critical this agent is to business operations — only the business side can assess this.</td></tr>
           <tr><td>Functional Fit</td><td>How well the agent meets the business need it was built for.</td></tr>
           <tr><td>AI Agent Business Value</td><td>The business value this agent delivers — requires the owner's perspective.</td></tr>
@@ -63,7 +62,7 @@
         <li>Click <strong>New Survey</strong>.</li>
         <li>Use the following prompt. Replace <code>[PXX]</code> with your participant number (e.g., P07). After submitting, the EA Assistant opens again and generates the survey — the first draft appears on the left side of the display.</li>
       </ol>
-      <div class="prompt"><span class="lbl">Prompt to paste (replace [PXX])</span>Create a survey for an AI agent governance review for the custom agent billing-document-retrieval-[PXX]. The respondent is the agent's business owner. The survey should collect: AI Risk, the AI Model or foundation model used, Business Criticality, Functional Fit, AI Agent Business Value, and Technical Fit.</div>
+      <div class="prompt"><span class="lbl">Prompt to paste (replace [PXX])</span>Create a survey for an AI agent governance review for the custom agent billing-document-retrieval-[PXX]. The respondent is the agent's business owner. The survey should collect: AI Risk, Business Criticality, Functional Fit, AI Agent Business Value, and Technical Fit.</div>
       <ol start="4">
         <li>Review the generated survey. Check that the <strong>AI Risk</strong> question is included — if it is not, click <strong>Add Fact Sheet Field</strong> in the survey editor and search for <strong>AI Risk</strong> to add it manually. This field is required before the agent can be verified. Adjust the question wording if needed to fit the GlobalFlex AG context, then click <strong>Next</strong>.</li>
       </ol>
@@ -116,7 +115,6 @@
         <li>Navigate to your agent's fact sheet and review the values that arrived from the survey:
           <ul>
             <li><strong>AI Risk</strong> — is the EU AI Act risk level appropriate for what this agent does?</li>
-            <li><strong>AI Model</strong> — note the underlying model. Does it affect your governance decision?</li>
             <li><strong>Business Criticality</strong> — does the business side's assessment match your expectation?</li>
             <li><strong>Functional Fit</strong> and <strong>Technical Fit</strong> — do these align with what you observed during discovery?</li>
           </ul>
@@ -162,7 +160,7 @@
 <footer>
   <div class="wrap"></div>
 </footer>
-<script src="sidebar.js"></script>
+<script src="sidebar.js?v=2"></script>
 <script src="lightbox.js"></script>
 <script src="progress.js"></script>
 </body>
