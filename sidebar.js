@@ -22,13 +22,6 @@
     } catch (e) { return 0; }
   }
 
-  var RESOURCES = [
-    { href: "https://github.com/SAP-samples/teched2026-BT161", label: "GitHub Repository" },
-    { href: "https://github.com/SAP-samples/teched2026-BT161/blob/main/BT161_AI_Agent_Hub_Intro%20.pdf", label: "Intro Slides (PDF)" },
-    { href: "https://help.sap.com/docs/LEANIX", label: "SAP AI Agent Hub Docs" },
-    { href: "https://learning.sap.com/", label: "SAP Learning: Governing AI" }
-  ];
-
   var current = document.body.getAttribute("data-current") || "";
 
   var clockSvg =
@@ -75,20 +68,11 @@
     );
   }).join("");
 
-  var resLinks = RESOURCES.map(function (r) {
-    return '<a class="ag-res-link" href="' + r.href + '" target="_blank" rel="noopener">' +
-      r.label + ' <span class="ag-arrow">↗</span></a>';
-  }).join("");
-
   var html =
     '<div class="ag-head"><span class="ag-head-text">WORKSHOP AGENDA</span>' +
     '<button class="ag-collapse-btn" aria-label="Collapse agenda" title="Collapse agenda">&#10094;</button>' +
     "</div>" +
-    '<nav class="ag-list">' + rows + "</nav>" +
-    '<div class="ag-res">' +
-    '<div class="ag-res-head"><span class="ag-link-ico">🔗</span> Resources</div>' +
-    resLinks +
-    "</div>";
+    '<nav class="ag-list">' + rows + "</nav>";
 
   var aside = document.createElement("aside");
   aside.className = "agenda";
